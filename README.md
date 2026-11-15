@@ -30,55 +30,10 @@
 
 자동 판독은 판단을 돕습니다. 자격과 점수는 공고문 기준에 따른 규칙으로 계산하며, 불확실한 내용은 사람이 확인합니다.
 
-## 빠른 시작
-
-필요 환경은 Python 3.12 이상, Node.js 20 이상입니다. 저장소 루트에서 설치합니다.
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r demo/backend/requirements.txt
-python -m pip install -r engine_v2/requirements.txt
-python engine_v2/tools/fetch_own_models.py
-cd demo/frontend && npm install && cd ../..
-python -m demo.fixtures.make_samples
-```
-
-터미널 두 개에서 실행한 뒤 <http://localhost:5173>을 엽니다.
-
-```bash
-uvicorn demo.backend.main:app --reload --port 8000
-```
-
-```bash
-cd demo/frontend && npm run dev
-```
 
 데모 로컬 OCR은 macOS를 포함한 모든 환경에서 own이 기본입니다. 모델 파일이 기본 경로에 없을 때는 easyocr로 대체하므로, own을 사용하려면 위 명령으로 모델을 설치해야 합니다. 시연용 문서는 가상 데이터로 만듭니다. 모델은 별도 내려받기이며 저장소에 포함되지 않습니다.
 
 이번 제출에서는 전북AI를 사용하지 않습니다(연동 코드는 있으나 이번 제출에서는 사용하지 않음). 판독 순서는 시연 고정 응답 → 로컬 OCR → PDF 텍스트입니다. JBAI_* 설정은 비워 둔 채 실행합니다.
-
-### 서류 업로드만 시험할 때 (개발용)
-
-1단계 본인인증을 마친 신청의 2단계(서식·지원 항목·동의·서명)를 가짜 값으로 채워, 서식 작성 없이 서류 업로드로 넘어갈 수 있습니다. 데모 DB에서만 동작합니다.
-
-1. 화면에서 1단계 본인인증을 마칩니다.
-2. 저장소 루트에서 실행합니다.
-   ```bash
-   PYTHONPATH=. python -B -m demo.backend.tools.seed_application
-   ```
-3. **1단계를 한 같은 탭** 주소창에 출력된 `/apply/upload` 주소를 입력합니다. 새 탭에서는 열리지 않습니다.
-4. 근로유형을 고르고 서류를 올립니다.
-5. 시험이 끝나면 정리합니다.
-   ```bash
-   PYTHONPATH=. python -B -m demo.backend.tools.seed_application --clean
-   ```
-
-시드한 신청은 2단계를 화면에서 다시 저장하지 마세요. 정리 표시가 지워져 `--clean`이 그 신청을 놓칩니다. 옵션과 자세한 동작은 [데모 안내](demo/README.md)를 참고하세요.
-
-## 현재 상태와 한계
-
-두 사업의 신청·서류 검토 데모가 있습니다. own은 데모 로컬 OCR의 기본 엔진이며, 정부24 자격득실확인서와 취업지원 서류의 사전 검사를 보강했습니다. 분류 모델은 실험 중이며 데모 판정에는 연결되지 않았습니다. 문서가 90도 또는 180도 돌아간 경우 자동 보정은 없습니다. own 평가는 ±2도 이내 기울임을 다룹니다. 알림톡 연동은 제안입니다.
 
 ## 문서 안내
 
@@ -95,7 +50,3 @@ cd demo/frontend && npm run dev
 제3자 자료의 출처와 라이선스 정보는 [제3자 고지](THIRD_PARTY_NOTICES.md)를, own의 설치·판독 정보는 [자체 OCR 안내](engine_v2/docs/own-ocr.md)를 참고하세요.
 
 자체 OCR의 제작 과정·평가·한계는 [제작 과정 기록](engine_v2/docs/own-ocr-history.md)을 참고하세요.
-
-## 실행 화면과 데모
-
-데모 화면은 PC 사용을 기준으로 합니다. 시연 순서와 화면 설명은 [시연 대본](demo/docs/demo-script.md)에 있습니다. 데모 데이터 초기화 및 자세한 환경 설정은 [데모 안내](demo/README.md)를 참고하세요.
