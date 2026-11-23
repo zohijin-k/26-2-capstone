@@ -17,7 +17,7 @@ OCR은 서류 사진이나 PDF에서 글자를 읽는 기술입니다.
 
 ## 저장소와 브랜치
 
-저장소는 GitHub의 `zohijin-k/2026-2-capstone`입니다. 최종 통합본은 `main`이며, 다른 브랜치를 내려받을 필요는 없습니다. 기존 clone은 `git checkout main && git pull`로 갱신합니다. git을 쓰지 않으면 저장소 첫 화면에서 브랜치가 `main`인지 확인하고 Code → Download ZIP으로 받습니다.
+저장소는 GitHub의 `zohijin-k/26-2-capstone`입니다. 최종 통합본은 `main`이며, 다른 브랜치를 내려받을 필요는 없습니다. 기존 clone은 `git checkout main && git pull`로 갱신합니다. git을 쓰지 않으면 저장소 첫 화면에서 브랜치가 `main`인지 확인하고 Code → Download ZIP으로 받습니다.
 
 브랜치 안내 (2026-11-12 기준, 원격 브랜치 및 `origin/main` 병합 여부):
 
@@ -64,7 +64,7 @@ OCR은 서류 사진이나 PDF에서 글자를 읽는 기술입니다.
 
 ## 개발 환경과 실행
 
-Python 3.12 이상, Node.js 20 이상이 필요합니다. macOS와 Linux에서 백엔드·프론트엔드를 실행할 수 있습니다. 데모 로컬 OCR은 macOS를 포함한 모든 환경에서 own이 기본이므로 macOS에서도 `python engine_v2/tools/fetch_own_models.py`로 모델을 설치해야 합니다.
+Python 3.12 이상, Node.js 22.13 이상이 필요합니다. macOS와 Linux에서 백엔드·프론트엔드를 실행할 수 있습니다. 데모 로컬 OCR은 macOS를 포함한 모든 환경에서 own이 기본이므로 macOS에서도 `python engine_v2/tools/fetch_own_models.py`로 모델을 설치해야 합니다.
 
 저장소 루트에서 설치하고 시연 샘플을 생성합니다.
 
@@ -128,7 +128,7 @@ for f in demo/backend/tests/run_p*_scenarios.py; do echo "== $f"; python -m demo
 python -m pytest engine_v2/tests -q
 ```
 
-현재 실행 확인 결과 `engine_v2/tests`는 260개 통과, 3개 건너뜀입니다. 맥에는 합성 글꼴이 없어 일부 글꼴 의존 테스트가 건너뛰어질 수 있습니다. 시나리오 스크립트 18개를 실행해 1,776개 확인이 통과했습니다. 위 반복문은 한 시나리오가 실패해도 나머지를 계속 실행합니다. 파일 이름 순서상 P11\~P15가 P2\~P9보다 먼저 실행되므로, 앞에서 멈추면 뒤 시나리오 결과를 확인할 수 없습니다.
+현재 실행 확인 결과 `engine_v2/tests`는 1,264개 통과, 3개 건너뜀입니다(2026-11-23 기준). 맥에는 합성 글꼴이 없어 일부 글꼴 의존 테스트가 건너뛰어질 수 있습니다. 시나리오 스크립트 18개를 실행해 1,776개 확인이 통과했습니다. 위 반복문은 한 시나리오가 실패해도 나머지를 계속 실행합니다. 파일 이름 순서상 P11\~P15가 P2\~P9보다 먼저 실행되므로, 앞에서 멈추면 뒤 시나리오 결과를 확인할 수 없습니다.
 
 프론트엔드 타입 검사·린트·빌드는 다음과 같습니다.
 
