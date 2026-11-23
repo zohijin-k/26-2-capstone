@@ -2,7 +2,7 @@
 
 ## 1. 프로젝트 소개
 
-전북 청년정책의 신청·서식 작성·서류 확인·담당자 심사를 돕는 학생 팀 개발 결과물입니다. 두배적금과 청년 취업지원패키지의 서로 다른 업무 규칙을 유지하면서 문서 인식·정보 추출·명시적 규칙 판정과 담당자 검토를 연결합니다. **PRODUCTION_NOT_READY.**
+전북 청년정책의 신청·서식 작성·서류 확인·담당자 심사를 돕는 학생 팀 개발 결과물입니다. 두배적금과 청년 취업지원패키지의 서로 다른 업무 규칙을 유지하면서 문서 인식·정보 추출·명시적 규칙 판정과 담당자 검토를 연결합니다.
 
 ## 2. 캡스톤디자인·도청 협력 배경
 
@@ -88,7 +88,6 @@ React·TypeScript·Vite 프런트, FastAPI·SQLModel·SQLite 백엔드, PDF.js �
 ```json
 {
   "schema_version": 1,
-  "production": "PRODUCTION_NOT_READY",
   "observation_date": "2026-11-23 KST",
   "scope": "immutable code validation baselines plus live current-main endpoints; final README merge SHAs are recorded in the private final release-manifest",
   "source_redistribution_authorized": false,
@@ -224,6 +223,4 @@ README 미결 8건(O13·Y8·O14·Y6·Y7·P8·X3·X7)을 임의로 승인하지 �
 
 youth 이미지 210개와 별도 제한 검토 대상 43개, 반입 보류 자산은 대표 저장소로 공개 복제하지 않습니다. 기여자·학교·협력기관의 권리 관계를 확인 없이 단정하지 않으며 임의 LICENSE를 추가하지 않습니다.
 
-## 13. 프로젝트 상태
-
-**PRODUCTION_NOT_READY.** 학교 캡스톤·도청 협력 프로젝트의 개발 결과와 제한된 합성 검증을 설명합니다. 공식 운영 배포·운영 승인·도청 인증 또는 보증을 받았다는 뜻이 아닙니다. 기존 보안·개인정보·제3자 고지와 비공개 보관본을 보존하며 운영 DB migration·실제 배포·운영 인프라 작업은 수행하지 않습니다.
+학교 캡스톤·도청 협력 프로젝트의 개발 결과와 제한된 합성 검증을 설명합니다. 공식 운영 배포·운영 승인·도청 인증 또는 보증을 받았다는 뜻이 아닙니다. 기존 보안·개인정보·제3자 고지와 비공개 보관본을 보존하며 운영 DB migration·실제 배포·운영 인프라 작업은 수행하지 않습니다.
